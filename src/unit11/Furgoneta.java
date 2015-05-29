@@ -6,6 +6,6 @@ package unit11;
 /**
  * @author Antonio Reche Ramal
  */
-public class Furgoneta {
+public class Furgoneta extends Vehiculo implements Renting {
 
 }
