@@ -200,6 +200,7 @@ public class Concesionario {
 			System.out.println("**********Alquiler de vehículos**********");
 			System.out.println("\tPara alquilar vehículo pulsa 1.");
 			System.out.println("\tPara devolver vehículo pulsa 2.");
+			System.out.println("\tpara añadir un nuevo cliente pulsa 3.");
 			System.out.print("\nEscoge una opción: ");
 			opcion=teclado.nextLine();
 			
@@ -212,6 +213,11 @@ public class Concesionario {
 				devolver();
 				break;
 			case "3":
+				Cliente c=new Cliente();
+				c.rellenarDatos();
+				anyadirCliente(c);
+				break;
+			case "4":
 				salir=true;
 				break;
 			default:
