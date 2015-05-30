@@ -14,15 +14,25 @@ public class Cliente {
 	
 	String nombre;
 	String dni;
-	boolean carnetTurismo;
-	boolean carnetFurgoneta;
-	boolean carnetCamion;
-	boolean alquilado;		//true indica que tiene un vehículo ya alquilado
+	boolean carnetTurismo=false;;
+	boolean carnetFurgoneta=false;
+	boolean carnetCamion=false;
+	boolean alquilado=false;		//true indica que tiene un vehículo ya alquilado
 	
 	/**
 	 * Constructor por defecto
 	 */
 	public Cliente(){		
+	}
+	
+	/**
+	 * Constructor parametrizado para añadir nombre y dni
+	 * @param nombre
+	 * @param dni
+	 */
+	public Cliente(String nombre, String dni){
+		this.nombre=nombre;
+		this.dni=dni;
 	}
 
 	/**
@@ -56,7 +66,7 @@ public class Cliente {
 	/**
 	 * @return the carnetTurismo
 	 */
-	public boolean isCarnetTurismo() {
+	public boolean getCarnetTurismo() {
 		return carnetTurismo;
 	}
 
@@ -136,11 +146,11 @@ public class Cliente {
 		System.out.println("Introduzca los datos del cliente: ");
 		System.out.print("\tNombre: ");
 		nombre=teclado.nextLine();
-		System.out.print("\nDNI: ");
+		System.out.print("\tDNI: ");
 		dni=teclado.nextLine();
 		
 		do{
-			System.out.print("\n¿Tiene carnet para turismos? Si(s) No(n): ");
+			System.out.print("\t¿Tiene carnet para turismos? Si(s) No(n): ");
 			opcion=teclado.nextLine();
 		}while(!comprobarOpcion(opcion));
 		
@@ -150,7 +160,7 @@ public class Cliente {
 			carnetTurismo=false;
 		
 		do{
-			System.out.print("\n¿Tiene carnet para furgonetas? Si(s) No(n): ");
+			System.out.print("\t¿Tiene carnet para furgonetas? Si(s) No(n): ");
 			opcion=teclado.nextLine();
 		}while(!comprobarOpcion(opcion));
 		
@@ -160,7 +170,7 @@ public class Cliente {
 			carnetFurgoneta=false;
 		
 		do{
-			System.out.print("\n¿Tiene carnet para camión? Si(s) No(n): ");
+			System.out.print("\t¿Tiene carnet para camión? Si(s) No(n): ");
 			opcion=teclado.nextLine();
 		}while(!comprobarOpcion(opcion));
 		

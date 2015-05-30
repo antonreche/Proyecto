@@ -16,16 +16,8 @@ public class Vehiculo {
 	protected float precioDia;
 	protected float precioKm;
 	protected int km;			//km antes de salir
-	protected boolean alquilado;
-	
-	/**
-	 * Constructor por defecto
-	 */
-	public Vehiculo()
-	{
+	protected boolean alquilado=false;
 		
-	}
-	
 	/**
 	 * Constructor parametrizado para añadir los atributos de Vehículo
 	 * @param matricula --> matricula
@@ -34,14 +26,11 @@ public class Vehiculo {
 	 * @param precioDia	-->precio de alquiler por dia
 	 * @param precioKm	-->precio de alquiler por km
 	 */
-	public Vehiculo(String matricula, String marca, int km, float precioDia, float precioKm)
+	protected Vehiculo(String marca, String matricula, int km)
 	{
 		this.matricula=matricula;
 		this.marca=marca;
-		this.km=km;
-		this.precioDia=precioDia;
-		this.precioKm=precioKm;
-		
+		this.km=km;		
 	}
 	
 	/**
@@ -56,7 +45,8 @@ public class Vehiculo {
 	 * Método set para alquilado
 	 * @param alquilado	--> true cuando se alquila, false cuando se devuelve
 	 */
-	public void setAlquilado(boolean alquilado){		
+	public void setAlquilado(boolean alquilado){
+		this.alquilado=alquilado;
 	}
 	
 	/**
@@ -167,9 +157,31 @@ public class Vehiculo {
 		if(alquilado)
 			System.out.println("El vehículo está disponible.");
 		else
-			System.out.println("El vehículo no está disponible.");
-		
+			System.out.println("El vehículo no está disponible.");		
 	}
 	
+	/**
+	 * Método para comprobar si la opción es válida ("s" o "n")
+	 * @param opcion	-->texto a comprobar
+	 * @return true si opcion es "s" o "n" false cualquier otro
+	 */
+	protected boolean comprobarOpcion(String opcion)
+	{
+		if(opcion.equals("s"))
+			return true;
+		else if(opcion.equals("n"))
+			return true;
+		else{
+			System.out.println("¡Opción no válida!");
+			return false;
+		}
+	}	
 	
+	protected boolean compruebaKm(int marcadorKm){
+		if(marcadorKm<km){
+			System.out.println("Número de kilometros menor que el del marcador antes de alquilar.");
+			return false;
+		}else
+			return true;
+	}
 }
