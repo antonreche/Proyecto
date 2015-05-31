@@ -167,10 +167,8 @@ public class Vehiculo {
 	 */
 	protected boolean comprobarOpcion(String opcion)
 	{
-		if(opcion.equals("s"))
-			return true;
-		else if(opcion.equals("n"))
-			return true;
+		if(opcion.equals("s") || opcion.equals("n"))
+			return true;		
 		else{
 			System.out.println("¡Opción no válida!");
 			return false;

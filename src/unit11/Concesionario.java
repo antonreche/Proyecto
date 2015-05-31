@@ -200,7 +200,8 @@ public class Concesionario {
 			System.out.println("**********Alquiler de vehículos**********");
 			System.out.println("\tPara alquilar vehículo pulsa 1.");
 			System.out.println("\tPara devolver vehículo pulsa 2.");
-			System.out.println("\tpara añadir un nuevo cliente pulsa 3.");
+			System.out.println("\tPara añadir un nuevo cliente pulsa 3.");
+			System.out.println("\tPara salir pulsa 4.");
 			System.out.print("\nEscoge una opción: ");
 			opcion=teclado.nextLine();
 			
